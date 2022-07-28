@@ -49,9 +49,9 @@ describe("GET /todos", () => {
   });
 });
 
-const checkpointOne =
-  parseInt(process.env.CHECKPOINT!) > 0 ? describe : describe.skip;
-checkpointOne("GET /todos/{id}", () => {
+// const checkpointOne =
+//   parseInt(process.env.CHECKPOINT!) > 0 ? describe : describe.skip;
+describe("GET /todos/{id}", () => {
   it("should return just one Todo when a valid id is OK", async () => {
     const postRes = await supertestRequest
       .post("/api/todos")
@@ -76,9 +76,9 @@ checkpointOne("GET /todos/{id}", () => {
   });
 });
 
-const checkpointTwo =
-  parseInt(process.env.CHECKPOINT!) > 1 ? describe : describe.skip;
-  checkpointTwo("DELETE /todos{id}", () => {
+// const checkpointTwo =
+//   parseInt(process.env.CHECKPOINT!) > 1 ? describe : describe.skip;
+  describe("DELETE /todos{id}", () => {
   it("should return success when id is OK", async () => {
     const postRes = await supertestRequest
       .post("/api/todos")
@@ -122,9 +122,9 @@ const checkpointTwo =
   // });
 });
 
-const checkpointThree =
-  parseInt(process.env.CHECKPOINT!) > 2 ? describe : describe.skip;
-  checkpointThree("PUT /todos/{id}", () => {
+// const checkpointThree =
+//   parseInt(process.env.CHECKPOINT!) > 2 ? describe : describe.skip;
+  describe("PUT /todos/{id}", () => {
   it("should return success when id is OK", async () => {
     const postRes = await supertestRequest
       .post("/api/todos")
